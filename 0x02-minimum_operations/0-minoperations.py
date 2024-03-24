@@ -13,10 +13,10 @@ def minOperations(n: int) -> int:
     needed to result in exactly n H characters in the file.
     """
     num: int = 0
-    _min: int = 2
+    m: int = 2
     while n > 1:
-        while n % _min == 0:
-            num = num + _min
-            n = n // _min
-        _min += 1
+        while n % m == 0:
+            num = num + m
+            n = n // m
+        m += 1
     return num
