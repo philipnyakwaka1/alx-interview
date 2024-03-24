@@ -12,8 +12,6 @@ def minOperations(n: int) -> int:
     This function calculates the fewest number of operations
     needed to result in exactly n H characters in the file.
     """
-    num: int
-    _min: int
     num = 0
     _min = 2
     while n > 1:
