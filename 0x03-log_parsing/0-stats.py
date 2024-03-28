@@ -15,10 +15,17 @@ def signal_handler(signum, frame):
 signal.signal(signal.SIGINT, signal_handler)
 counter = 0
 file_size = 0
-pattern = r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[.+\] "GET \/projects\/\d+ HTTP\/1\.1" \d{3} \d+$'
+pattern = (
+    r"^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - "
+    r"\[.*?\] \"GET /projects/\d+ HTTP/1.1\" "
+    r"(\d{3}) "
+    r"(\d+)$"
+)
+
 for line in sys.stdin:
     if re.match(pattern, line):
-        status_dict = {'200': 0, '301': 0, '400': 0, '401': 0, '403': 0, '404': 0, '405': 0, '500': 0}
+        status_dict = {'200': 0, '301': 0, '400': 0, '401': 0,
+                       '403': 0, '404': 0, '405': 0, '500': 0}
         data = line.split(' ')
         file_size += int(data[-1])
         if str(data[-2]) in status_dict.keys():
