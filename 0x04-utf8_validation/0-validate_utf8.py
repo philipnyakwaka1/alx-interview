@@ -11,7 +11,7 @@ def is_continuation_byte(byte):
     return (byte >> 6) & 0b10 == 0b10
 
 
-def validUtf8(data: List[int]) -> bool:
+def validUTF8(data: List[int]) -> bool:
     """Determines if a given data set represents a valid utf-8 encoding"""
     try:
         i = 0
