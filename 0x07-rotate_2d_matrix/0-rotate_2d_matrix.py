@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Module for rotate_2d_matrix function
 """
-from typing import List
 
 
-def rotate_2d_matrix(matrix: List[List[int]]) -> None:
+def rotate_2d_matrix(matrix: list[list[int]]) -> None:
     """Rotates a 2D matrix 90 degrees, clockwise
     """
     left, right = 0, len(matrix) - 1
