@@ -9,7 +9,7 @@ def rotate_2d_matrix(matrix):
     left, right = 0, len(matrix) - 1
     while left < right:
         top, bottom = left, right
-        for i in range(right):
+        for i in range(right - left):
             tmp = matrix[top][left + i]
             matrix[top][left + i] = matrix[bottom - i][left]
             matrix[bottom - i][left] = matrix[bottom][right - i]
