@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Module for rotate_2d_matrix function
 """
 from typing import List
